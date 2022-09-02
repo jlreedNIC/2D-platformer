@@ -5,7 +5,7 @@ The current release, v1.0.0
 
 ## Quick Launch
 -------------------
-- Double Click the dread.exe file and it will launch.
+- Double Click the 2d-platformer.exe file and it will launch.
 - Click "Play Game" to play the game.
 - Click "Quit" to quit the game and close the application.
 - To pause the game and access the pause menu and help screen press 'esc'
