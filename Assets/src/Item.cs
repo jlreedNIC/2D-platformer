@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int scoreUpdate = 1; // how much to add to score
+    public int points = 1; // how much to add to score
     public int damage = 0; // how much to detract from health
     // think about separate classes for above
     // look into instances
@@ -25,7 +25,7 @@ public class Item : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // call update score instead?
-        GameManager.score += scoreUpdate;
+        GameManager.UpdateScore(points);
         // health -= damage;
         // call update health
 
