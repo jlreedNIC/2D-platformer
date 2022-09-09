@@ -12,8 +12,7 @@ public class GameManager : MonoBehaviour
     // look up difference between public static and private in C#/unity
     public static int score = 0;
     
-    // should health be here?
-    public static int health = 3;
+    public static int health = 3; // should health be here? or with player script
 
     public int BCdeathCount = 0;    // set during menu
     private bool bcmode = false;
@@ -31,6 +30,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // tracks the number of times drbc has died
         if(bcmode)
         {
             if(health <= 0)
@@ -41,9 +41,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // updates the score by adding points
     public static void UpdateScore(int points)
     {
         score += points;
+    }
+
+    // updates the health variable to reflect taking damage
+    public static void UpdateHealth(int value)
+    {
+        health -= value;
     }
 
     // add ongui for health and score display
