@@ -20,18 +20,25 @@ public class GameManager : MonoBehaviour
     // updating score on screen
     public GameObject game_overlay;
     Text scoreText;                 // text object for score
+    Text healthText;                // text object for health
+                                    // used for debugging purposes for now
 
     // Start is called before the first frame update
     void Start()
     {
         game_overlay = GameObject.Find("ScoreText"); // find the score text object
         scoreText = game_overlay.GetComponent<Text>(); // for updating the score string
+
+        // reuse gameoverlay variable
+        game_overlay = GameObject.Find("HealthText"); // only used in debugging!
+        healthText = game_overlay.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
         scoreText.text = "Score: " + score;
+        healthText.text = "Health: " + health;
         // tracks the number of times drbc has died
         if(bcmode)
         {
