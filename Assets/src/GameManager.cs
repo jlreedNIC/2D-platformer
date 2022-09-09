@@ -5,31 +5,33 @@ also manages drbc death count
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // look up difference between public static and private in C#/unity
-    public static int score = 0;
+    public static int score = 0;    // look up difference between public static and private in C#/unity
     
-    public static int health = 3; // should health be here? or with player script
+    public static int health = 3;   // should health be here? or with player script
 
     public int BCdeathCount = 0;    // set during menu
     private bool bcmode = false;
 
     // updating score on screen
-    public GameObject game_overlay; // find way to update text
-    // might need to use textmesh
+    public GameObject game_overlay;
+    Text scoreText;                 // text object for score
 
     // Start is called before the first frame update
     void Start()
     {
-        game_overlay = GameObject.Find("ScoreText");
+        game_overlay = GameObject.Find("ScoreText"); // find the score text object
+        scoreText = game_overlay.GetComponent<Text>(); // for updating the score string
     }
 
     // Update is called once per frame
     void Update()
     {
+        scoreText.text = "Score: " + score;
         // tracks the number of times drbc has died
         if(bcmode)
         {
