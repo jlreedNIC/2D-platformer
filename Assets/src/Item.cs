@@ -26,6 +26,7 @@ public class Item : MonoBehaviour
     {
         // call update score instead?
         GameManager.UpdateScore(points);
+        GameManager.UpdateHealth(damage);
         // health -= damage;
         // call update health
 
