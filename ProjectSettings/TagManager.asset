@@ -48,6 +48,9 @@ TagManager:
   - name: Items
     uniqueID: 4047847663
     locked: 0
-  - name: Terrain
+  - name: Ground
     uniqueID: 2117369187
+    locked: 0
+  - name: Grass
+    uniqueID: 1265529761
     locked: 0
