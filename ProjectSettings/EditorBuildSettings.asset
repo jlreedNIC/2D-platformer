@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Taylor_Testing_Scenes/Start_Menu.unity
+    guid: 1559c5e773b84e84791a4a00dbd728a8
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/Taylor_Testing_Scenes/Player_Movement_Test_Scene.unity
+    guid: 8f571f43de682a042a8a18942e66ff49
   m_configObjects: {}
