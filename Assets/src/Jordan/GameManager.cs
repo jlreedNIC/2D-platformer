@@ -15,22 +15,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int score = 0;    // look up difference between public static and private in C#/unity
+    private static int score = 0;    // look up difference between public static and private in C#/unity
     
-    public static int health = 3;
+    private static int health;
     public static int maxHealth = 3;
 
-    public int BCdeathCount = 0;
-    private bool bcmode = false;    // set during start menu
+    public static bool isOverlayActive = true;
 
     // updating score on screen
-    public GameObject game_overlay;
+    private static GameObject game_overlay;
     Text scoreText;                 // text object for score
     Text healthText;                // text object for health
 
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
+
         // get scoreText object and get text component
         game_overlay = GameObject.Find("ScoreText");
         scoreText = game_overlay.GetComponent<Text>();
@@ -46,18 +47,6 @@ public class GameManager : MonoBehaviour
         // update score and health on screen
         scoreText.text = "Score: " + score;
         healthText.text = "x " + health;
-
-        // tracks the number of times drbc has died
-        if(bcmode)
-        {
-            if(health <= 0)
-            {
-                BCdeathCount++;
-                health = maxHealth;
-            }
-        }
-
-        // need to add a you died screen
     }
 
     // updates the score by adding points
@@ -78,5 +67,24 @@ public class GameManager : MonoBehaviour
         {
             health -= value;
         }
+
+        // checks to see if the player has died
+        if(health <= 0)
+        {
+            DeathScreen.PlayerDied();
+        }
+    }
+
+    // hides the score and health
+    // if it is already hidden, the score and health will show up again
+    public static void HideOverlay()
+    {
+        game_overlay = GameObject.Find("GameManager");
+        game_overlay = game_overlay.transform.GetChild(0).gameObject;
+
+        isOverlayActive = !isOverlayActive;
+
+        game_overlay.SetActive(isOverlayActive);
+
     }
 }
