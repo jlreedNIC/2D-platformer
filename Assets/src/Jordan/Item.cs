@@ -13,8 +13,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int points = 1; // how much to add to score
-    public int damage = 0; // how much to detract from health
+    public int points = 1;              // how much to add to score
+    public int damage = 0;              // how much to detract from health
+    public bool isConsumable = true;    // setting to delete object after trigger
     
 
     // Start is called before the first frame update
@@ -32,10 +33,16 @@ public class Item : MonoBehaviour
     // when collided with, update score/health and disappear
     void OnTriggerEnter2D(Collider2D other)
     {
-        GameManager.UpdateScore(points);
-        GameManager.UpdateHealth(damage);
+        if(other.tag == "Player")
+        {
+            GameManager.UpdateScore(points);
+            GameManager.UpdateHealth(damage);
 
-        Destroy(gameObject);
+            if(isConsumable)
+            {
+                Destroy(gameObject);
+            }
+        }
 
     }
 }
