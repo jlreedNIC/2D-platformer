@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathScreen : MonoBehaviour
 {
@@ -32,6 +33,15 @@ public class DeathScreen : MonoBehaviour
         deathChild.SetActive(true);
         GameManager.HideOverlay();
         Time.timeScale = 0; 
+
+        // to do:
+        // need to stop player input
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene(0); 
     }
 
     // quits the game

@@ -77,10 +77,11 @@ public class GameManager : MonoBehaviour
 
     // hides the score and health
     // if it is already hidden, the score and health will show up again
+    // to do: fix in main scene
     public static void HideOverlay()
     {
         game_overlay = GameObject.Find("GameManager");
-        game_overlay = game_overlay.transform.GetChild(0).gameObject;
+        game_overlay = game_overlay.transform.GetChild(0).gameObject; // this is not working
 
         isOverlayActive = !isOverlayActive;
 

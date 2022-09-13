@@ -16,6 +16,8 @@ public class Item : MonoBehaviour
     public int points = 1;              // how much to add to score
     public int damage = 0;              // how much to detract from health
     public bool isConsumable = true;    // setting to delete object after trigger
+
+    // to do: add debug to say consumed what itme or hit what item
     
 
     // Start is called before the first frame update
