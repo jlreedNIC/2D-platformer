@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        score = 0;
 
         // get scoreText object and get text component
         game_overlay = GameObject.Find("ScoreText");
@@ -77,11 +78,10 @@ public class GameManager : MonoBehaviour
 
     // hides the score and health
     // if it is already hidden, the score and health will show up again
-    // to do: fix in main scene
     public static void HideOverlay()
     {
-        game_overlay = GameObject.Find("GameManager");
-        game_overlay = game_overlay.transform.GetChild(0).gameObject; // this is not working
+        game_overlay = GameObject.Find("HUD_GM");
+        game_overlay = game_overlay.transform.GetChild(0).gameObject;
 
         isOverlayActive = !isOverlayActive;
 
