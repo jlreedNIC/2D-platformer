@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1833005343}
   m_Layer: 0
   m_Name: meat
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 0
   damage: -1
+  isConsumable: 1
+  audioPlayer: {fileID: 0}
 --- !u!60 &1833005343
 PolygonCollider2D:
   m_ObjectHideFlags: 0

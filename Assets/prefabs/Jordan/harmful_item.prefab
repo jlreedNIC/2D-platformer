@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6621106425795235586}
   m_Layer: 0
   m_Name: harmful_item
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8946697286646535470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7065, y: -2.4928, z: 0}
-  m_LocalScale: {x: 2.6866, y: 2.8888, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,6 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 3
   damage: 1
+  isConsumable: 1
+  audioPlayer: {fileID: 0}
 --- !u!58 &6621106425795235586
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -135,6 +137,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0013848108, y: 0.0057954364}
+  m_Offset: {x: 0.006281376, y: 0.005795419}
   serializedVersion: 2
-  m_Radius: 0.054584257
+  m_Radius: 0.40722322

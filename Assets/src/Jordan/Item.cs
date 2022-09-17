@@ -16,14 +16,14 @@ public class Item : MonoBehaviour
     public int points = 1;              // how much to add to score
     public int damage = 0;              // how much to detract from health
     public bool isConsumable = true;    // setting to delete object after trigger
+    public AudioSource audioPlayer;     // play sound for items
 
-    // to do: add debug to say consumed what itme or hit what item
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -39,6 +39,9 @@ public class Item : MonoBehaviour
         {
             GameManager.UpdateScore(points);
             GameManager.UpdateHealth(damage);
+
+            audioPlayer.Play();
+            Debug.Log("played sound");
 
             if(isConsumable)
             {
