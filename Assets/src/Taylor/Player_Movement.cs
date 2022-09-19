@@ -13,6 +13,9 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;  
     [SerializeField] private bool _isTouchingGround;  
 
+    // for animation
+    public Animator animator;
+
 
     //player rigidbody
     [SerializeField] private Rigidbody2D _playerRB; 
@@ -36,9 +39,19 @@ public class Player_Movement : MonoBehaviour
         //get input and move player
         MovePlayer(); 
 
+        
+
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
+            // set jump animation to start
+            animator.SetBool("isJumping", true);
             Jump();
+        }
+        
+        // set jump animation to stop
+        if(_playerRB.velocity.y == 0 && IsGrounded())
+        {
+            animator.SetBool("isJumping", false);
         }
     }
 
@@ -68,5 +81,8 @@ public class Player_Movement : MonoBehaviour
 
         //move the player
         _playerRB.velocity = new Vector2(horizontalMovementInput * _playerMovementSpeed, _playerRB.velocity.y); 
+
+        // animation
+        animator.SetFloat("speed", Mathf.Abs(_playerRB.velocity.x));
     }
 }
